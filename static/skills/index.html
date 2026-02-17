@@ -147,7 +147,12 @@
             font-weight: 500;
         }
         
-        .categories-section {
+        .featured-skills {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            padding: 3rem;
             margin: 4rem 0;
         }
         
@@ -160,6 +165,123 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .skill-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #00FFFF, #FFD700);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .skill-card:hover::before {
+            opacity: 0.4;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.6);
+        }
+        
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+        }
+        
+        .skill-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #FFD700;
+        }
+        
+        .skill-status {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+        
+        .skill-description {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .skill-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .skill-button {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-install {
+            background: rgba(0, 255, 255, 0.1);
+            color: #00FFFF;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        .skill-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .categories-section {
+            margin: 4rem 0;
         }
         
         .categories-grid {
@@ -176,31 +298,11 @@
             border-radius: 20px;
             padding: 2rem;
             transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #FFD700, #FF69B4, #00FFFF, #FFD700);
-            border-radius: 20px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .category-card:hover::before {
-            opacity: 0.3;
         }
         
         .category-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 215, 0, 0.6);
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.4);
         }
         
         .category-icon {
@@ -336,7 +438,7 @@
         @media (max-width: 768px) {
             .container { padding: 0 1rem; }
             .hero-section { padding: 3rem 0 2rem; }
-            .categories-grid { grid-template-columns: 1fr; }
+            .categories-grid, .featured-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: 3.5rem; }
             .stats-bar { gap: 1rem; flex-direction: column; align-items: center; }
         }
@@ -367,8 +469,8 @@
                     <span class="stat-label">Available Skills</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">30s</span>
-                    <span class="stat-label">Install Time</span>
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">GitHub Repos</span>
                 </div>
                 <div class="stat">
                     <span class="stat-number">100%</span>
@@ -378,10 +480,133 @@
         </div>
     </div>
 
+    <!-- Featured Skills Section -->
+    <div class="container">
+        <div class="featured-skills">
+            <h2 class="section-title">🌟 Featured Skills with GitHub Repositories</h2>
+            
+            <div class="featured-grid">
+                <!-- Context Separation -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">🛡️</div>
+                        <div>
+                            <div class="skill-title">Context Separation</div>
+                            <div class="skill-status">Published</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        Prevent context conflation in multi-channel environments. Automatically validates 
+                        communication context appropriateness before posting to business channels, personal chats, or client groups.
+                    </p>
+                    <div class="skill-actions">
+                        <a href="https://github.com/smilinTux/context-separation-skill" target="_blank" class="skill-button btn-primary">📚 View on GitHub</a>
+                        <button class="skill-button btn-install" onclick="copyInstallCommand('context-separation')">📦 Copy Install</button>
+                    </div>
+                </div>
+
+                <!-- OAuth Helper -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">🔐</div>
+                        <div>
+                            <div class="skill-title">OAuth Helper</div>
+                            <div class="skill-status">Published</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        Automate OAuth login flows with user confirmation via Telegram. Supports 7 providers: 
+                        Google, Apple, Microsoft, GitHub, Discord, WeChat, QQ. Auto-detect and handle account selection.
+                    </p>
+                    <div class="skill-actions">
+                        <a href="https://github.com/smilinTux/oauth-helper-skill" target="_blank" class="skill-button btn-primary">📚 View on GitHub</a>
+                        <button class="skill-button btn-install" onclick="copyInstallCommand('oauth-helper')">📦 Copy Install</button>
+                    </div>
+                </div>
+
+                <!-- Agent Browser -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">🌐</div>
+                        <div>
+                            <div class="skill-title">Agent Browser</div>
+                            <div class="skill-status">Local Install</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        Fast Rust-based headless browser automation CLI with Node.js fallback. Enables AI agents to 
+                        navigate, click, type, and snapshot pages via structured commands.
+                    </p>
+                    <div class="skill-actions">
+                        <button class="skill-button btn-secondary" onclick="showSkillDetails('agent-browser')">📄 View Documentation</button>
+                        <button class="skill-button btn-install" onclick="copyInstallCommand('agent-browser')">📦 Copy Install</button>
+                    </div>
+                </div>
+
+                <!-- Discord Bot Manager -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">🎮</div>
+                        <div>
+                            <div class="skill-title">Discord Bot Manager</div>
+                            <div class="skill-status">Local Install</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        Complete Discord bot lifecycle management - setup, deployment, monitoring, and maintenance. 
+                        Discord.js setup, environment configuration, systemd services, and production deployment.
+                    </p>
+                    <div class="skill-actions">
+                        <button class="skill-button btn-secondary" onclick="showSkillDetails('discord-bot-manager')">📄 View Documentation</button>
+                        <button class="skill-button btn-install" onclick="copyInstallCommand('discord-bot-manager')">📦 Copy Install</button>
+                    </div>
+                </div>
+
+                <!-- EZ Google -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">📧</div>
+                        <div>
+                            <div class="skill-title">EZ Google</div>
+                            <div class="skill-status">Local Install</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        Send email, check inbox, calendar management, Google Drive integration, create Docs, 
+                        read spreadsheets, find contacts. Agent-friendly with hosted OAuth - no API keys needed.
+                    </p>
+                    <div class="skill-actions">
+                        <button class="skill-button btn-secondary" onclick="showSkillDetails('ez-google')">📄 View Documentation</button>
+                        <button class="skill-button btn-install" onclick="copyInstallCommand('ez-google')">📦 Copy Install</button>
+                    </div>
+                </div>
+
+                <!-- Humanizer -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">✍️</div>
+                        <div>
+                            <div class="skill-title">Humanizer</div>
+                            <div class="skill-status">Local Install</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        Remove signs of AI-generated writing from text. Based on Wikipedia's comprehensive 
+                        "Signs of AI writing" guide. Fixes inflated symbolism, promotional language, and AI vocabulary.
+                    </p>
+                    <div class="skill-actions">
+                        <button class="skill-button btn-secondary" onclick="showSkillDetails('humanizer')">📄 View Documentation</button>
+                        <button class="skill-button btn-install" onclick="copyInstallCommand('humanizer')">📦 Copy Install</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Categories Section -->
     <div class="categories-section">
         <div class="container">
-            <h2 class="section-title">🎯 Skill Categories</h2>
+            <h2 class="section-title">🎯 All Skill Categories (59 Total)</h2>
             
             <div class="categories-grid">
                 <!-- Productivity & Integration -->
@@ -491,7 +716,7 @@
             </div>
             
             <p style="color: rgba(255, 255, 255, 0.7); margin: 1rem 0;">
-                Example: <code style="color: #FFD700;">openclaw skill install ez-google</code>
+                Example: <code style="color: #FFD700;">openclaw skill install context-separation</code>
             </p>
             
             <a href="https://github.com/openclaw/openclaw" target="_blank" class="cta-button">📚 OpenClaw Documentation</a>
@@ -507,143 +732,4 @@
             </p>
             <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
                 <a href="https://skworld.io" class="cta-button">🏠 SKWorld Hub</a>
-                <a href="https://souls.skworld.io" class="cta-button">🎭 35 AI Personalities</a>
-                <a href="https://smilintux.org/SKSecurity/" class="cta-button">🛡️ AI Security</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="https://skworld.io">🌟 SKWorld Hub</a>
-                <a href="https://souls.skworld.io">🎭 Soul Blueprints</a>
-                <a href="https://github.com/openclaw/openclaw">🔧 OpenClaw</a>
-                <a href="https://discord.gg/skworld">💬 Discord</a>
-            </div>
-            <div class="mono" style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
-                © 2026 Skills Marketplace - Part of <a href="https://skworld.io" style="color: #FFD700;">SKWorld</a> Revolutionary AI Ecosystem<br>
-                <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0 • 
-                <span style="color: rgba(255, 255, 255, 0.6);">Built with ❤️ by the Pengu Empire</span> 🐧✨
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function copyToClipboard(element) {
-            const text = element.textContent.trim();
-            navigator.clipboard.writeText(text).then(() => {
-                const originalBg = element.style.backgroundColor;
-                const originalBorder = element.style.borderColor;
-                element.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
-                element.style.borderColor = '#00ff00';
-                const originalText = element.textContent;
-                element.textContent = '✅ Copied to clipboard!';
-                setTimeout(() => {
-                    element.style.backgroundColor = originalBg;
-                    element.style.borderColor = originalBorder;
-                    element.textContent = originalText;
-                }, 1500);
-            });
-        }
-
-        // Create skill-themed floating particles
-        function createSkillParticles() {
-            const skillIcons = ['🛠️', '⚡', '🎯', '🚀', '💫', '⭐', '✨', '🔧', '📦'];
-            const particleCount = 15;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                const icon = skillIcons[Math.floor(Math.random() * skillIcons.length)];
-                particle.textContent = icon;
-                particle.style.position = 'absolute';
-                particle.style.fontSize = Math.random() * 1 + 0.6 + 'rem';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animation = `float ${Math.random() * 20 + 20}s infinite ease-in-out`;
-                particle.style.animationDelay = Math.random() * 10 + 's';
-                particle.style.opacity = Math.random() * 0.6 + 0.3;
-                particle.style.zIndex = '-1';
-                document.querySelector('.starfield').appendChild(particle);
-            }
-        }
-
-        // CSS for floating animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                0%, 100% { 
-                    transform: translateY(0px) rotate(0deg); 
-                    opacity: 0.3; 
-                }
-                25% { 
-                    transform: translateY(-30px) rotate(90deg); 
-                    opacity: 0.7; 
-                }
-                50% { 
-                    transform: translateY(-60px) rotate(180deg); 
-                    opacity: 1; 
-                }
-                75% { 
-                    transform: translateY(-30px) rotate(270deg); 
-                    opacity: 0.7; 
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Initialize particles when page loads
-        document.addEventListener('DOMContentLoaded', createSkillParticles);
-
-        // Stats counter animation
-        function animateStats() {
-            const stats = document.querySelectorAll('.stat-number');
-            stats.forEach(stat => {
-                const target = stat.textContent;
-                if (target === '59') {
-                    animateValue(stat, 0, 59, 2000);
-                } else if (target.includes('s')) {
-                    const num = parseInt(target);
-                    animateValue(stat, 0, num, 1500, 's');
-                } else if (target.includes('%')) {
-                    const num = parseInt(target);
-                    animateValue(stat, 0, num, 2500, '%');
-                }
-            });
-        }
-        
-        function animateValue(element, start, end, duration, suffix = '') {
-            const startTime = performance.now();
-            
-            function updateValue(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const current = Math.floor(progress * (end - start) + start);
-                element.textContent = current + suffix;
-                
-                if (progress < 1) {
-                    requestAnimationFrame(updateValue);
-                }
-            }
-            
-            requestAnimationFrame(updateValue);
-        }
-
-        // Trigger stats animation when in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateStats();
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        const statsBar = document.querySelector('.stats-bar');
-        if (statsBar) {
-            observer.observe(statsBar);
-        }
-    </script>
-</body>
-</html>
+                <a href="https://souls.skworld.io" class="cta-button">🎭 35 AI
