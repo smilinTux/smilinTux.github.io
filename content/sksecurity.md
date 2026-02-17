@@ -26,3 +26,4 @@ curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh
 - [Soul Blueprints](https://souls.skworld.io) - 35 AI Personalities
 - [SKWorld Ecosystem](https://skworld.io)
 - [Community Discord](https://discord.gg/skworld)
+<-- TRIGGER BUILD -->
