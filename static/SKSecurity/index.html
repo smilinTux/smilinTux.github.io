@@ -7,257 +7,453 @@
     <meta name="description" content="World's first conversational AI security platform. Just say 'scan for vulnerabilities' and get enterprise-grade protection.">
     
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        body { 
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: white;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            overflow-x: hidden;
         }
+        
+        /* Animated Starfield Background */
+        .starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1a1a2e 0%, #16213e 40%, #0f0f0f 100%);
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, rgba(255,215,0,0.8), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(0,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,215,0,0.6), transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.4), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 120s linear infinite;
+        }
+        
+        .stars:nth-child(2) {
+            background-size: 300px 150px;
+            animation: sparkle 180s linear infinite reverse;
+            opacity: 0.6;
+        }
+        
+        .stars:nth-child(3) {
+            background-size: 400px 200px;
+            animation: sparkle 240s linear infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes sparkle {
+            from { transform: translateX(0px) translateY(0px); }
+            to { transform: translateX(-200px) translateY(-100px); }
+        }
+        
+        .mono { font-family: 'JetBrains Mono', monospace; }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .glass-effect {
+            background: rgba(26, 26, 46, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            border-radius: 16px;
         }
         
         .header {
             text-align: center;
-            color: white;
-            margin-bottom: 3rem;
+            padding: 4rem 0 2rem;
         }
         
         .logo {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
         }
         
         .tagline {
-            font-size: 1.5rem;
-            opacity: 0.9;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 2rem;
         }
         
         .hero {
-            background: white;
-            border-radius: 15px;
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
             padding: 3rem;
             margin-bottom: 3rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
         }
         
-        .demo {
-            background: #f8f9fa;
-            border-radius: 10px;
+        .conversation-demo {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
             padding: 2rem;
             margin: 2rem 0;
-            font-family: 'Monaco', 'Menlo', monospace;
+            font-family: 'JetBrains Mono', monospace;
         }
         
-        .user-input {
-            color: #0066cc;
-            font-weight: bold;
+        .user-message {
+            color: #00ffff;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #00ffff;
         }
         
-        .ai-response {
-            color: #28a745;
-            margin: 1rem 0;
-            padding: 1rem;
-            background: #e8f5e8;
-            border-radius: 5px;
+        .ai-message {
+            color: #FFD700;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #FFD700;
         }
         
-        .install-section {
-            background: #2c3e50;
-            color: white;
-            border-radius: 15px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .install-code {
-            background: #34495e;
-            padding: 1.5rem;
-            border-radius: 10px;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 1.2rem;
-            margin: 1rem 0;
-            overflow-x: auto;
-        }
-        
-        .features {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin: 3rem 0;
         }
         
-        .feature {
-            background: white;
+        .feature-card {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            border-radius: 16px;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(255, 215, 0, 0.2);
         }
         
         .feature-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFD700;
             margin-bottom: 1rem;
         }
         
-        .cta-section {
-            text-align: center;
-            background: white;
+        .feature-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .install-section {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
             padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+            text-align: center;
         }
         
-        .btn {
+        .install-command {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #FFD700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .install-command:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+        
+        .cta-button {
             display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
             padding: 1rem 2rem;
-            margin: 0.5rem;
-            border-radius: 50px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         }
         
-        .btn:hover {
+        .cta-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
         }
         
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
-        
-        .btn-secondary {
-            background: #28a745;
-            color: white;
+        .soul-blueprints-section {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
         }
         
         .footer {
             text-align: center;
-            color: white;
-            opacity: 0.8;
-            margin-top: 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            margin-top: 4rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #FFA500;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            .tagline { font-size: 1.8rem; }
+            .features-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">🛡️ SKSecurity Enterprise</div>
-            <div class="tagline">The only security solution AI agents need</div>
-            <p>World's first conversational AI security platform</p>
-        </header>
+    <!-- Animated Starfield Background -->
+    <div class="starfield">
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+    </div>
 
-        <section class="hero">
-            <h2>🤖 Revolutionary Conversational AI Security</h2>
-            <p>Enterprise-grade security through simple conversation. No commands to learn, no configuration needed.</p>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🛡️</div>
+            <h1 class="tagline">SKSecurity Enterprise</h1>
+            <p class="subtitle">The only security solution AI agents need</p>
+        </div>
+
+        <div class="hero">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem;">&gt; REVOLUTIONARY_AI_SECURITY.exe</div>
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: white;">🤖 Revolutionary Conversational AI Security</h2>
+            <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
+                Enterprise-grade security through simple conversation. No commands to learn, no configuration needed.
+            </p>
             
-            <div class="demo">
-                <div class="user-input">👤 "scan my code for security issues"</div>
-                <div class="ai-response">
-                    🤖 "🔍 Found 15 vulnerabilities. 🔧 Fixed all automatically. ✅ Your code is secure!"
-                </div>
+            <div class="conversation-demo">
+                <div class="user-message">👤 "scan my code for security issues"</div>
+                <div class="ai-message">🤖 "🔍 Found 15 vulnerabilities. 🔧 Fixed all automatically. ✅ Your code is secure!"</div>
             </div>
+
+            <h3 style="color: #FFD700; margin: 2rem 0 1rem;">🧠 AI-Powered Code Fixing</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
+                The first AI that automatically writes secure code replacements:
+            </p>
             
-            <h3>🧠 AI-Powered Code Fixing</h3>
-            <p>The first AI that automatically writes secure code replacements:</p>
-            
-            <div class="demo">
-                <div class="user-input">👤 "fix security issues"</div>
-                <div class="ai-response">
-                    🤖 "🔧 AI Remediation Complete!<br>
-                    ✅ Security Fixes Applied: 3/3<br>
+            <div class="conversation-demo">
+                <div class="user-message">👤 "fix security issues"</div>
+                <div class="ai-message">
+                    🤖 "🔧 AI Remediation Complete!<br><br>
+                    ✅ Security Fixes Applied: 3/3<br><br>
                     • Hardcoded API key → Environment variable<br>
                     • SQL injection → Parameterized query<br>
                     • Path traversal → Secure validation<br><br>
                     ✅ Your code is now enterprise-grade secure!"
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="install-section">
-            <h2>🚀 Get Started in 30 Seconds</h2>
-            <p>One line installs enterprise-grade AI security:</p>
-            <div class="install-code">
+        <div class="install-section">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem;">&gt; INSTALLATION_PROTOCOL.exe</div>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: white;">🚀 Get Started in 30 Seconds</h2>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
+                One line installs enterprise-grade AI security:
+            </p>
+            
+            <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
                 curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash
             </div>
-            <p>Works with OpenClaw, AutoGPT, LangChain, and any AI framework.</p>
-        </section>
+            
+            <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 2rem;">
+                Works with OpenClaw, AutoGPT, LangChain, and any AI framework.
+            </p>
+            
+            <a href="https://github.com/smilinTux/SKSecurity" class="cta-button" target="_blank">🌟 View on GitHub</a>
+            <a href="https://discord.gg/5767MCWbFR" class="cta-button" target="_blank">💬 Join Community</a>
+        </div>
 
-        <section class="features">
-            <div class="feature">
+        <div class="features-grid">
+            <div class="feature-card">
                 <div class="feature-icon">🤖</div>
-                <h3>Conversational Interface</h3>
-                <p>Just talk to it. "scan for threats", "fix vulnerabilities", "check security status" - AI handles everything.</p>
+                <h3 class="feature-title">Conversational Interface</h3>
+                <p class="feature-description">
+                    Just talk to it. "scan for threats", "fix vulnerabilities", "check security status" - AI handles everything.
+                </p>
             </div>
             
-            <div class="feature">
+            <div class="feature-card">
                 <div class="feature-icon">🔧</div>
-                <h3>AI Code Generation</h3>
-                <p>First AI that writes secure code automatically. Fixes vulnerabilities with AI-generated secure replacements.</p>
+                <h3 class="feature-title">AI Code Generation</h3>
+                <p class="feature-description">
+                    First AI that writes secure code automatically. Fixes vulnerabilities with AI-generated secure replacements.
+                </p>
             </div>
             
-            <div class="feature">
+            <div class="feature-card">
                 <div class="feature-icon">🏢</div>
-                <h3>Enterprise Ready</h3>
-                <p>SOC2, NIST, OWASP compliance through conversation. 24/7 monitoring with professional reporting.</p>
+                <h3 class="feature-title">Enterprise Ready</h3>
+                <p class="feature-description">
+                    SOC2, NIST, OWASP compliance through conversation. 24/7 monitoring with professional reporting.
+                </p>
             </div>
             
-            <div class="feature">
+            <div class="feature-card">
                 <div class="feature-icon">🌐</div>
-                <h3>Universal Compatibility</h3>
-                <p>Works with any AI framework. OpenClaw, AutoGPT, LangChain, custom solutions - one platform secures them all.</p>
+                <h3 class="feature-title">Universal Compatibility</h3>
+                <p class="feature-description">
+                    Works with any AI framework. OpenClaw, AutoGPT, LangChain, custom solutions - one platform secures them all.
+                </p>
             </div>
-        </section>
+        </div>
 
-        <section class="cta-section">
-            <h2>🎯 Join the Conversational AI Revolution</h2>
-            <p>Transform from complex security tools to simple conversation.</p>
+        <div class="soul-blueprints-section">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem;">&gt; AI_PERSONALITY_REVOLUTION.exe</div>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #FFD700;">🎭 Want AI with Authentic Personality?</h2>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
+                Secure AI is important - but what about AI with authentic character?
+            </p>
             
-            <a href="https://github.com/smilinTux/SKSecurity" class="btn btn-primary">🌟 View on GitHub</a>
-            <a href="https://discord.gg/5767MCWbFR" class="btn btn-secondary">💬 Join Community</a>
+            <h3 style="color: #FFD700; margin-bottom: 1rem;">35 Revolutionary AI Personalities Available</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
+                End corporate AI robotics with authentic personalities: Comedy legends (George Carlin, Dave Chappelle), 
+                Superheroes (Deadpool, Batman), and kid-safe companions. Unhinged modes for adults, complete safety for kids.
+            </p>
             
-            <br><br>
-            
-            <h3>🎭 Want AI with Authentic Personality?</h3>
-            <p>Secure AI is important - but what about AI with <strong>authentic character</strong>?</p>
-            
-            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                        border-radius: 15px; padding: 2rem; margin: 2rem auto; color: white; max-width: 600px;">
-                <h4>🎵 Meet Teddy Banks - "I'ma Get You Right"</h4>
-                <p>End corporate AI robotics with authentic 1970s soul wisdom</p>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://smilintux.org/soul-blueprints/teddy-banks.html" 
-                       style="background: #f39c12; color: white; padding: 0.8rem 1.5rem; 
-                              border-radius: 25px; text-decoration: none; font-weight: bold; margin: 0.5rem;">
-                        🎵 Meet Teddy Banks
-                    </a>
-                    <a href="https://smilintux.org/soul-blueprints/" 
-                       style="background: rgba(255,255,255,0.2); color: white; padding: 0.8rem 1.5rem; 
-                              border-radius: 25px; text-decoration: none; font-weight: bold; margin: 0.5rem;">
-                        🎭 Soul Blueprints
-                    </a>
-                </div>
+            <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                install skill https://github.com/smilinTux/soul-blueprints
             </div>
-        </section>
-
-        <footer class="footer">
-            <p>Built with ❤️ by smilinTux - Making AI deployment safe for everyone</p>
-            <p>🛡️ <a href="https://github.com/smilinTux/SKSecurity" style="color: white;">GitHub</a> | 
-               💬 <a href="https://discord.gg/5767MCWbFR" style="color: white;">Discord</a> | 
-               📧 <a href="mailto:support@smilintux.org" style="color: white;">Support</a> |
-               🏢 <a href="mailto:sales@smilintux.org" style="color: white;">Enterprise</a></p>
-        </footer>
+            
+            <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 2rem;">
+                Transform your AI from corporate robot to authentic personality in 30 seconds!
+            </p>
+            
+            <a href="https://souls.skworld.io" class="cta-button" target="_blank">🎭 Browse 35 Soul Collection</a>
+            <a href="https://skworld.io" class="cta-button" target="_blank">🌟 Visit SKWorld</a>
+        </div>
     </div>
+
+    <div class="footer">
+        <p>&copy; 2026 SKSecurity Enterprise - Part of the <a href="https://skworld.io">SKWorld</a> revolutionary AI ecosystem</p>
+        <p style="margin-top: 0.5rem;">
+            <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0
+        </p>
+    </div>
+
+    <script>
+        function copyToClipboard(element) {
+            const text = element.textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                const originalBg = element.style.backgroundColor;
+                const originalBorder = element.style.borderColor;
+                element.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
+                element.style.borderColor = '#00ff00';
+                setTimeout(() => {
+                    element.style.backgroundColor = originalBg;
+                    element.style.borderColor = originalBorder;
+                }, 500);
+            }).catch(err => {
+                console.log('Copy failed:', err);
+            });
+        }
+
+        // Create floating particles
+        function createParticles() {
+            const particleCount = 30;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 2 + 1 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = 'rgba(255, 215, 0, 0.3)';
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animation = `float ${Math.random() * 20 + 20}s infinite ease-in-out`;
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                document.querySelector('.starfield').appendChild(particle);
+            }
+        }
+
+        // CSS for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+                50% { transform: translateY(-100px) rotate(180deg); opacity: 0.8; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize particles when page loads
+        document.addEventListener('DOMContentLoaded', createParticles);
+    </script>
 </body>
 </html>
