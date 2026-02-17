@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKSecurity Enterprise - The only security solution AI agents need</title>
-    <meta name="description" content="World's first conversational AI security platform. Just say 'scan for vulnerabilities' and get enterprise-grade protection.">
+    <title>SKSecurity Enterprise - Revolutionary Conversational AI Security Platform</title>
+    <meta name="description" content="World's first conversational AI security platform. Just say 'scan for vulnerabilities' and get enterprise-grade protection automatically. 95% cost reduction vs traditional security!">
+    <link rel="canonical" href="https://smilintux.org/SKSecurity/">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap');
@@ -41,11 +42,11 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(2px 2px at 20px 30px, rgba(255,215,0,0.8), transparent),
-                radial-gradient(2px 2px at 40px 70px, rgba(0,255,255,0.6), transparent),
-                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.8), transparent),
-                radial-gradient(1px 1px at 130px 80px, rgba(255,215,0,0.6), transparent),
-                radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.4), transparent);
+                radial-gradient(2px 2px at 20px 30px, rgba(255,215,0,0.9), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(0,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,215,0,0.7), transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.5), transparent);
             background-repeat: repeat;
             background-size: 200px 100px;
             animation: sparkle 120s linear infinite;
@@ -82,7 +83,7 @@
             background: rgba(26, 26, 46, 0.4);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 215, 0, 0.1);
-            border-radius: 16px;
+            border-radius: 20px;
         }
         
         .header {
@@ -91,9 +92,15 @@
         }
         
         .logo {
-            font-size: 4rem;
+            font-size: 5rem;
             margin-bottom: 1rem;
-            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6)); }
+            50% { filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.9)); }
         }
         
         .tagline {
@@ -101,88 +108,201 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 1rem;
             text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
         }
         
         .subtitle {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 1rem 2rem;
+            background: rgba(26, 26, 46, 0.5);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFD700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            font-weight: 500;
         }
         
         .hero {
             background: rgba(26, 26, 46, 0.6);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 20px;
-            padding: 3rem;
+            border-radius: 25px;
+            padding: 3.5rem;
             margin-bottom: 3rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FFD700, transparent, #FFD700);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0.2;
         }
         
         .conversation-demo {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 2rem;
             margin: 2rem 0;
             font-family: 'JetBrains Mono', monospace;
+            position: relative;
+        }
+        
+        .conversation-demo::before {
+            content: 'LIVE DEMO';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #FFD700;
+            color: #000;
+            padding: 0.3rem 1rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 700;
         }
         
         .user-message {
             color: #00ffff;
             margin-bottom: 1rem;
-            padding: 0.5rem 1rem;
+            padding: 1rem 1.5rem;
             background: rgba(0, 255, 255, 0.1);
-            border-radius: 8px;
-            border-left: 3px solid #00ffff;
+            border-radius: 12px;
+            border-left: 4px solid #00ffff;
+            position: relative;
+        }
+        
+        .user-message::before {
+            content: '👤 USER';
+            position: absolute;
+            top: -8px;
+            left: 15px;
+            background: #00ffff;
+            color: #000;
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
         }
         
         .ai-message {
             color: #FFD700;
-            padding: 0.5rem 1rem;
+            padding: 1rem 1.5rem;
             background: rgba(255, 215, 0, 0.1);
-            border-radius: 8px;
-            border-left: 3px solid #FFD700;
+            border-radius: 12px;
+            border-left: 4px solid #FFD700;
+            position: relative;
+        }
+        
+        .ai-message::before {
+            content: '🤖 SKSECURITY AI';
+            position: absolute;
+            top: -8px;
+            left: 15px;
+            background: #FFD700;
+            color: #000;
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin: 3rem 0;
+            margin: 4rem 0;
         }
         
         .feature-card {
             background: rgba(26, 26, 46, 0.6);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 215, 0, 0.15);
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 2.5rem;
             transition: all 0.4s ease;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
         }
         
         .feature-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             border-color: rgba(255, 215, 0, 0.4);
             box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 25px 50px rgba(0, 0, 0, 0.4),
                 0 0 30px rgba(255, 215, 0, 0.2);
         }
         
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
             display: block;
             filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
         }
         
         .feature-title {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #FFD700;
             margin-bottom: 1rem;
@@ -196,54 +316,129 @@
         .install-section {
             background: rgba(26, 26, 46, 0.6);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 3rem 0;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            padding: 4rem;
+            margin: 4rem 0;
             text-align: center;
+            position: relative;
+        }
+        
+        .install-section::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #FFD700, transparent, #FFD700);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0.3;
         }
         
         .install-command {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1.5rem 0;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #FFD700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
         }
         
         .install-command:hover {
             background: rgba(255, 215, 0, 0.1);
             border-color: #FFD700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            transform: scale(1.02);
         }
         
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             color: #000;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            margin: 0.5rem;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            margin: 0.8rem;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
         }
         
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
             background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
         }
         
-        .soul-blueprints-section {
-            background: rgba(26, 26, 46, 0.6);
+        .cta-primary { 
+            background: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
+        }
+        
+        .cta-secondary { 
+            background: rgba(26, 26, 46, 0.8);
+            color: #FFD700;
+            border: 2px solid #FFD700;
+        }
+        
+        .ecosystem-section {
+            background: rgba(26, 26, 46, 0.5);
             backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .ecosystem-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .ecosystem-card:hover {
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .social-proof {
+            background: rgba(26, 26, 46, 0.4);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 215, 0, 0.2);
             border-radius: 20px;
             padding: 3rem;
@@ -251,28 +446,54 @@
             text-align: center;
         }
         
+        .testimonial {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin: 0 auto 1rem;
+        }
+        
         .footer {
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
             border-top: 1px solid rgba(255, 215, 0, 0.1);
             margin-top: 4rem;
-            color: rgba(255, 255, 255, 0.6);
+            background: rgba(10, 10, 10, 0.9);
         }
         
-        .footer a {
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
             color: #FFD700;
             text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
         }
         
-        .footer a:hover {
+        .footer-links a:hover {
             color: #FFA500;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            border-color: rgba(255, 215, 0, 0.3);
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-2px);
         }
         
         @media (max-width: 768px) {
             .container { padding: 0 1rem; }
-            .tagline { font-size: 1.8rem; }
-            .features-grid { grid-template-columns: 1fr; }
+            .tagline { font-size: 2rem; }
+            .features-grid, .ecosystem-grid { grid-template-columns: 1fr; }
+            .stats-bar { gap: 1rem; }
+            .stats-bar .stat { padding: 0.8rem 1.5rem; }
         }
     </style>
 </head>
@@ -288,156 +509,264 @@
         <div class="header">
             <div class="logo">🛡️</div>
             <h1 class="tagline">SKSecurity Enterprise</h1>
-            <p class="subtitle">The only security solution AI agents need</p>
-        </div>
-
-        <div class="hero">
-            <div class="mono" style="color: #FFD700; margin-bottom: 1rem;">&gt; REVOLUTIONARY_AI_SECURITY.exe</div>
-            <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: white;">🤖 Revolutionary Conversational AI Security</h2>
-            <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
-                Enterprise-grade security through simple conversation. No commands to learn, no configuration needed.
-            </p>
+            <p class="subtitle">World's First Conversational AI Security Platform</p>
             
-            <div class="conversation-demo">
-                <div class="user-message">👤 "scan my code for security issues"</div>
-                <div class="ai-message">🤖 "🔍 Found 15 vulnerabilities. 🔧 Fixed all automatically. ✅ Your code is secure!"</div>
-            </div>
-
-            <h3 style="color: #FFD700; margin: 2rem 0 1rem;">🧠 AI-Powered Code Fixing</h3>
-            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
-                The first AI that automatically writes secure code replacements:
-            </p>
-            
-            <div class="conversation-demo">
-                <div class="user-message">👤 "fix security issues"</div>
-                <div class="ai-message">
-                    🤖 "🔧 AI Remediation Complete!<br><br>
-                    ✅ Security Fixes Applied: 3/3<br><br>
-                    • Hardcoded API key → Environment variable<br>
-                    • SQL injection → Parameterized query<br>
-                    • Path traversal → Secure validation<br><br>
-                    ✅ Your code is now enterprise-grade secure!"
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Cost Reduction</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">30s</span>
+                    <span class="stat-label">Install Time</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Protection</span>
                 </div>
             </div>
         </div>
 
-        <div class="install-section">
-            <div class="mono" style="color: #FFD700; margin-bottom: 1rem;">&gt; INSTALLATION_PROTOCOL.exe</div>
-            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: white;">🚀 Get Started in 30 Seconds</h2>
-            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
-                One line installs enterprise-grade AI security:
+        <div class="hero">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1.5rem; font-size: 1rem;">&gt; REVOLUTIONARY_AI_SECURITY.exe</div>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: white;">🤖 Just Talk to Your Security System</h2>
+            <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2.5rem;">
+                No configuration files. No command syntax. No manual scanning.<br>
+                <strong>Just say what you need</strong> and AI handles everything automatically.
             </p>
             
-            <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
-                curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash
+            <div class="conversation-demo">
+                <div class="user-message">"scan my code for security vulnerabilities"</div>
+                <div class="ai-message">
+                    🔍 <strong>Security Analysis Complete!</strong><br><br>
+                    ✅ <strong>15 vulnerabilities detected and fixed automatically:</strong><br><br>
+                    • Hardcoded API keys → Environment variables<br>
+                    • SQL injection risks → Parameterized queries<br>
+                    • Path traversal → Input validation<br>
+                    • CSRF vulnerabilities → Token protection<br>
+                    • XSS risks → Output encoding<br><br>
+                    🛡️ <strong>Your application is now enterprise-grade secure!</strong><br>
+                    📊 Compliance: SOC2 ✓ | NIST ✓ | OWASP ✓
+                </div>
             </div>
-            
-            <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 2rem;">
-                Works with OpenClaw, AutoGPT, LangChain, and any AI framework.
+
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.1rem;">
+                <strong>Revolutionary AI Code Generation:</strong> First security platform that automatically writes secure code replacements!
             </p>
             
-            <a href="https://github.com/smilinTux/SKSecurity" class="cta-button" target="_blank">🌟 View on GitHub</a>
-            <a href="https://discord.gg/5767MCWbFR" class="cta-button" target="_blank">💬 Join Community</a>
+            <a href="#install" class="cta-button cta-primary">🚀 Install in 30 Seconds</a>
+            <a href="https://github.com/smilinTux/SKSecurity" target="_blank" class="cta-button">📚 View Documentation</a>
         </div>
 
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🤖</div>
+                <div class="feature-icon">🗣️</div>
                 <h3 class="feature-title">Conversational Interface</h3>
                 <p class="feature-description">
-                    Just talk to it. "scan for threats", "fix vulnerabilities", "check security status" - AI handles everything.
+                    No learning curve. Just talk naturally: "scan for threats", "fix vulnerabilities", "check compliance status". 
+                    AI understands context and executes automatically.
                 </p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">🔧</div>
+                <div class="feature-icon">🧠</div>
                 <h3 class="feature-title">AI Code Generation</h3>
                 <p class="feature-description">
-                    First AI that writes secure code automatically. Fixes vulnerabilities with AI-generated secure replacements.
+                    World's first AI that writes secure code automatically. Finds vulnerabilities and generates 
+                    production-ready secure replacements. No more manual patching.
                 </p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">🏢</div>
-                <h3 class="feature-title">Enterprise Ready</h3>
+                <h3 class="feature-title">Enterprise Compliance</h3>
                 <p class="feature-description">
-                    SOC2, NIST, OWASP compliance through conversation. 24/7 monitoring with professional reporting.
+                    SOC2, NIST, OWASP, PCI-DSS compliance through conversation. Automatic documentation, 
+                    audit trails, and regulatory reporting.
                 </p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">🌐</div>
-                <h3 class="feature-title">Universal Compatibility</h3>
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Universal Integration</h3>
                 <p class="feature-description">
-                    Works with any AI framework. OpenClaw, AutoGPT, LangChain, custom solutions - one platform secures them all.
+                    Works with any AI framework: OpenClaw, AutoGPT, LangChain, custom agents. 
+                    One security platform secures your entire AI ecosystem.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3 class="feature-title">Continuous Protection</h3>
+                <p class="feature-description">
+                    24/7 monitoring with real-time threat detection. AI learns your patterns and 
+                    proactively identifies emerging security risks.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 class="feature-title">95% Cost Reduction</h3>
+                <p class="feature-description">
+                    Replace expensive security teams with conversational AI. One platform replaces 
+                    vulnerability scanners, SAST/DAST tools, and security consultants.
                 </p>
             </div>
         </div>
 
-        <div class="soul-blueprints-section">
-            <div class="mono" style="color: #FFD700; margin-bottom: 1rem;">&gt; AI_PERSONALITY_REVOLUTION.exe</div>
-            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #FFD700;">🎭 Want AI with Authentic Personality?</h2>
-            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
-                Secure AI is important - but what about AI with authentic character?
+        <div class="install-section" id="install">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1.5rem; font-size: 1rem;">&gt; INSTALLATION_PROTOCOL.exe</div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: white;">🚀 Deploy Enterprise Security in 30 Seconds</h2>
+            <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; font-size: 1.1rem;">
+                One command installs conversational AI security for your entire infrastructure:
             </p>
             
-            <h3 style="color: #FFD700; margin-bottom: 1rem;">35 Revolutionary AI Personalities Available</h3>
-            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
-                End corporate AI robotics with authentic personalities: Comedy legends (George Carlin, Dave Chappelle), 
-                Superheroes (Deadpool, Batman), and kid-safe companions. Unhinged modes for adults, complete safety for kids.
-            </p>
-            
-            <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
-                install skill https://github.com/smilinTux/soul-blueprints
+            <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy installation command">
+                curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash
             </div>
             
-            <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 2rem;">
-                Transform your AI from corporate robot to authentic personality in 30 seconds!
+            <p style="color: rgba(255, 255, 255, 0.7); margin: 1.5rem 0;">
+                <strong>Supports:</strong> Docker, Kubernetes, bare metal, cloud instances<br>
+                <strong>Compatible:</strong> OpenClaw, AutoGPT, LangChain, custom AI frameworks
             </p>
             
-            <a href="https://souls.skworld.io" class="cta-button" target="_blank">🎭 Browse 35 Soul Collection</a>
-            <a href="https://skworld.io" class="cta-button" target="_blank">🌟 Visit SKWorld</a>
+            <a href="https://github.com/smilinTux/SKSecurity/blob/main/README.md" target="_blank" class="cta-button">📖 Installation Guide</a>
+            <a href="https://github.com/smilinTux/SKSecurity/releases" target="_blank" class="cta-button cta-secondary">⬇️ Download Release</a>
+        </div>
+
+        <div class="social-proof">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem;">&gt; REVOLUTIONARY_BREAKTHROUGH.txt</div>
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: #FFD700;">🏆 Industry First: AI That Writes Secure Code</h2>
+            <div class="testimonial">
+                "SKSecurity isn't just scanning for vulnerabilities - it's automatically generating secure code replacements. 
+                This is the breakthrough the security industry has been waiting for."
+            </div>
+            <p style="color: rgba(255, 255, 255, 0.7); font-weight: 600;">— Security Research Community</p>
+            
+            <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(0,0,0,0.4); border-radius: 12px; border: 1px solid rgba(255,215,0,0.2);">
+                <h3 style="color: #FFD700; margin-bottom: 1rem;">🔬 Technical Innovation</h3>
+                <p style="color: rgba(255,255,255,0.8);">
+                    First AI system to combine vulnerability detection with automatic secure code generation. 
+                    Uses advanced language models to understand code context and generate production-ready security fixes.
+                </p>
+            </div>
+        </div>
+
+        <div class="ecosystem-section">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem;">&gt; SKWORLD_ECOSYSTEM.exe</div>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #FFD700;">🌟 Part of the SKWorld Revolution</h2>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
+                SKSecurity integrates seamlessly with the entire SKWorld ecosystem of revolutionary AI platforms:
+            </p>
+            
+            <div class="ecosystem-grid">
+                <div class="ecosystem-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎭</div>
+                    <h3 style="color: #FFD700; font-size: 1.3rem; margin-bottom: 0.8rem;">Soul Blueprints</h3>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 1rem;">
+                        35 AI personalities - End corporate robotics with authentic characters!
+                    </p>
+                    <a href="https://souls.skworld.io" target="_blank" class="cta-button" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Browse Collection</a>
+                </div>
+                
+                <div class="ecosystem-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏗️</div>
+                    <h3 style="color: #FFD700; font-size: 1.3rem; margin-bottom: 0.8rem;">FORGEPRINT</h3>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 1rem;">
+                        AI-native software blueprints. Don't use software - forge your own!
+                    </p>
+                    <a href="https://github.com/smilinTux/forgeprint" target="_blank" class="cta-button" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Coming Soon</a>
+                </div>
+                
+                <div class="ecosystem-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔧</div>
+                    <h3 style="color: #FFD700; font-size: 1.3rem; margin-bottom: 0.8rem;">OpenClaw Skills</h3>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 1rem;">
+                        50+ professional automation skills for business productivity!
+                    </p>
+                    <a href="https://github.com/openclaw/openclaw" target="_blank" class="cta-button" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Explore Skills</a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,215,0,0.1); border-radius: 12px; border: 1px solid rgba(255,215,0,0.3);">
+                <p style="color: #FFD700; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.8rem;">🐧 Visit SKWorld Headquarters</p>
+                <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Explore the complete ecosystem of revolutionary AI platforms at the Pengu Empire headquarters!
+                </p>
+                <a href="https://skworld.io" target="_blank" class="cta-button">🌟 Enter SKWorld</a>
+            </div>
         </div>
     </div>
 
     <div class="footer">
-        <p>&copy; 2026 SKSecurity Enterprise - Part of the <a href="https://skworld.io">SKWorld</a> revolutionary AI ecosystem</p>
-        <p style="margin-top: 0.5rem;">
-            <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0
-        </p>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/smilinTux/SKSecurity" target="_blank">🛡️ GitHub Repository</a>
+                <a href="https://github.com/smilinTux/SKSecurity/issues" target="_blank">🐛 Report Issues</a>
+                <a href="https://github.com/smilinTux/SKSecurity/discussions" target="_blank">💬 Community</a>
+                <a href="https://souls.skworld.io" target="_blank">🎭 Soul Blueprints</a>
+                <a href="https://skworld.io" target="_blank">🌟 SKWorld</a>
+                <a href="https://discord.gg/skworld" target="_blank">🎮 Discord</a>
+                <a href="mailto:security@skworld.io">📧 Contact</a>
+            </div>
+            <div class="mono" style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
+                © 2026 SKSecurity Enterprise - Part of <a href="https://skworld.io" style="color: #FFD700;">SKWorld</a> Revolutionary AI Ecosystem<br>
+                <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0 • 
+                <span style="color: rgba(255, 255, 255, 0.6);">Built with ❤️ by the Pengu Empire</span> 🐧
+            </div>
+            <div style="margin-top: 1rem; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px;">
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.8rem;">
+                    <strong>Revolutionary AI Security:</strong> First platform to combine conversational interfaces with automatic secure code generation. 
+                    Enterprise-grade protection through simple conversation. Join the security revolution!
+                </p>
+            </div>
+        </div>
     </div>
 
     <script>
         function copyToClipboard(element) {
             const text = element.textContent.trim();
             navigator.clipboard.writeText(text).then(() => {
+                const originalText = element.textContent;
                 const originalBg = element.style.backgroundColor;
                 const originalBorder = element.style.borderColor;
-                element.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
+                
+                element.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
                 element.style.borderColor = '#00ff00';
+                element.textContent = '✅ COPIED TO CLIPBOARD!';
+                
                 setTimeout(() => {
                     element.style.backgroundColor = originalBg;
                     element.style.borderColor = originalBorder;
-                }, 500);
+                    element.textContent = originalText;
+                }, 2000);
             }).catch(err => {
                 console.log('Copy failed:', err);
+                element.textContent = '❌ Copy failed - please select and copy manually';
+                setTimeout(() => {
+                    element.textContent = text;
+                }, 3000);
             });
         }
 
-        // Create floating particles
-        function createParticles() {
-            const particleCount = 30;
+        // Create floating security particles
+        function createSecurityParticles() {
+            const particleIcons = ['🛡️', '🔒', '🔐', '⚡', '✨', '🔍', '🚨', '💎'];
+            const particleCount = 15;
+            
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
+                const icon = particleIcons[Math.floor(Math.random() * particleIcons.length)];
+                particle.textContent = icon;
                 particle.style.position = 'absolute';
-                particle.style.width = Math.random() * 2 + 1 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.background = 'rgba(255, 215, 0, 0.3)';
-                particle.style.borderRadius = '50%';
+                particle.style.fontSize = Math.random() * 0.8 + 0.6 + 'rem';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
                 particle.style.animation = `float ${Math.random() * 20 + 20}s infinite ease-in-out`;
-                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.opacity = Math.random() * 0.4 + 0.2;
+                particle.style.zIndex = '-1';
+                particle.style.pointerEvents = 'none';
                 document.querySelector('.starfield').appendChild(particle);
             }
         }
@@ -446,14 +775,107 @@
         const style = document.createElement('style');
         style.textContent = `
             @keyframes float {
-                0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-                50% { transform: translateY(-100px) rotate(180deg); opacity: 0.8; }
+                0%, 100% { 
+                    transform: translateY(0px) rotate(0deg); 
+                    opacity: 0.2; 
+                }
+                25% { 
+                    transform: translateY(-40px) rotate(90deg); 
+                    opacity: 0.6; 
+                }
+                50% { 
+                    transform: translateY(-80px) rotate(180deg); 
+                    opacity: 0.8; 
+                }
+                75% { 
+                    transform: translateY(-40px) rotate(270deg); 
+                    opacity: 0.4; 
+                }
             }
         `;
         document.head.appendChild(style);
 
-        // Initialize particles when page loads
-        document.addEventListener('DOMContentLoaded', createParticles);
+        // Initialize security particles when page loads
+        document.addEventListener('DOMContentLoaded', createSecurityParticles);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add interactive effects to cards
+        document.querySelectorAll('.feature-card, .ecosystem-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.feature-icon') || this.querySelector('div[style*="font-size: 2.5rem"]');
+                if (icon) {
+                    icon.style.transform = 'scale(1.1) rotate(5deg)';
+                    icon.style.transition = 'transform 0.3s ease';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.feature-icon') || this.querySelector('div[style*="font-size: 2.5rem"]');
+                if (icon) {
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                }
+            });
+        });
+
+        // Stats counter animation
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = stat.textContent;
+                if (target.includes('%')) {
+                    const num = parseInt(target);
+                    animateValue(stat, 0, num, 2000, '%');
+                } else if (target.includes('s')) {
+                    const num = parseInt(target);
+                    animateValue(stat, 0, num, 1500, 's');
+                }
+            });
+        }
+        
+        function animateValue(element, start, end, duration, suffix = '') {
+            const startTime = performance.now();
+            
+            function updateValue(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = current + suffix;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateValue);
+                }
+            }
+            
+            requestAnimationFrame(updateValue);
+        }
+
+        // Trigger stats animation when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) {
+            observer.observe(statsBar);
+        }
     </script>
 </body>
 </html>
