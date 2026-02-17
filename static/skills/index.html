@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Marketplace - 59 Professional AI Skills | SKWorld</title>
+    <meta name="description" content="59 professional AI skills for OpenClaw agents. Gmail integration, security scanning, Discord bots, browser automation, and workflow automation tools.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Starfield Background */
+        .starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1a1a2e 0%, #16213e 40%, #0f0f0f 100%);
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, rgba(255,215,0,0.9), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(0,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,105,180,0.8), transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.6), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 120s linear infinite;
+        }
+        
+        .stars:nth-child(2) {
+            background-size: 250px 125px;
+            animation: sparkle 160s linear infinite reverse;
+            opacity: 0.8;
+        }
+        
+        .stars:nth-child(3) {
+            background-size: 300px 150px;
+            animation: sparkle 200s linear infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes sparkle {
+            from { transform: translateX(0px) translateY(0px); }
+            to { transform: translateX(-200px) translateY(-100px); }
+        }
+        
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-section {
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+        
+        .hero-title {
+            background: linear-gradient(135deg, #FFD700 0%, #FF69B4 30%, #00FFFF 60%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 1rem 2rem;
+            background: rgba(26, 26, 46, 0.5);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFD700;
+            display: block;
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .categories-section {
+            margin: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background: rgba(26, 26, 46, 0.4);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #00FFFF, #FFD700);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .category-card:hover::before {
+            opacity: 0.3;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.6);
+        }
+        
+        .category-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 0.8rem;
+        }
+        
+        .category-description {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .skills-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-list li {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .skills-list li:before {
+            content: "🛠️";
+            position: absolute;
+            left: 0;
+        }
+        
+        .install-section {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .install-command {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #FFD700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        .install-command:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            transform: scale(1.02);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #00FFFF 100%);
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            font-size: 1rem;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+        }
+        
+        .navigation-card {
+            background: rgba(26, 26, 46, 0.5);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            margin-top: 4rem;
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            border: 1px solid transparent;
+        }
+        
+        .footer-links a:hover {
+            color: #FF69B4;
+            border-color: rgba(255, 105, 180, 0.5);
+            background: rgba(255, 105, 180, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            .hero-section { padding: 3rem 0 2rem; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 3.5rem; }
+            .stats-bar { gap: 1rem; flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Starfield Background -->
+    <div class="starfield">
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 1rem;">SKILLS_MARKETPLACE.exe</div>
+            <h1 class="hero-title">Skills Marketplace</h1>
+            <p class="hero-subtitle">59 Professional AI Skills for OpenClaw Agents 🛠️</p>
+            <p class="hero-description">
+                Ready-to-deploy professional skills for business automation, productivity, and AI-enhanced workflows. 
+                Transform your AI agents into productivity powerhouses with our curated skill collection!
+            </p>
+            
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-number">59</span>
+                    <span class="stat-label">Available Skills</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">30s</span>
+                    <span class="stat-label">Install Time</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Open Source</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="categories-section">
+        <div class="container">
+            <h2 class="section-title">🎯 Skill Categories</h2>
+            
+            <div class="categories-grid">
+                <!-- Productivity & Integration -->
+                <div class="category-card">
+                    <div class="category-icon">📧</div>
+                    <h3 class="category-title">Productivity & Integration</h3>
+                    <p class="category-description">
+                        Gmail, Google Workspace, calendar management, and business workflow automation.
+                    </p>
+                    <ul class="skills-list">
+                        <li>ez-google (Gmail, Calendar, Drive)</li>
+                        <li>gmail-sender (Direct Gmail SMTP)</li>
+                        <li>gmail-oauth (Gmail API setup)</li>
+                        <li>himalaya (Email CLI management)</li>
+                    </ul>
+                </div>
+
+                <!-- Development & Automation -->
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3 class="category-title">Development & Automation</h3>
+                    <p class="category-description">
+                        Browser automation, GitHub integration, and development workflow tools.
+                    </p>
+                    <ul class="skills-list">
+                        <li>agent-browser (Rust browser automation)</li>
+                        <li>github (CLI integration)</li>
+                        <li>docker-essentials (Container management)</li>
+                        <li>mcporter (MCP server management)</li>
+                    </ul>
+                </div>
+
+                <!-- Security & Privacy -->
+                <div class="category-card">
+                    <div class="category-icon">🛡️</div>
+                    <h3 class="category-title">Security & Privacy</h3>
+                    <p class="category-description">
+                        Context separation, OAuth automation, and security scanning tools.
+                    </p>
+                    <ul class="skills-list">
+                        <li>context-separation (Business boundaries)</li>
+                        <li>oauth-helper (OAuth automation)</li>
+                        <li>security-scanner (Vulnerability detection)</li>
+                        <li>healthcheck (System hardening)</li>
+                    </ul>
+                </div>
+
+                <!-- Content & Communication -->
+                <div class="category-card">
+                    <div class="category-icon">🎭</div>
+                    <h3 class="category-title">Content & Communication</h3>
+                    <p class="category-description">
+                        Discord bots, social platforms, content creation, and communication tools.
+                    </p>
+                    <ul class="skills-list">
+                        <li>discord-bot-manager (Complete Discord lifecycle)</li>
+                        <li>humanizer (Remove AI writing signs)</li>
+                        <li>moltbook (AI social network)</li>
+                        <li>video-frames (Video processing)</li>
+                    </ul>
+                </div>
+
+                <!-- AI & Machine Learning -->
+                <div class="category-card">
+                    <div class="category-icon">🤖</div>
+                    <h3 class="category-title">AI & Machine Learning</h3>
+                    <p class="category-description">
+                        Image generation, voice synthesis, AI model integration, and ML workflows.
+                    </p>
+                    <ul class="skills-list">
+                        <li>nano-banana-pro (Gemini image generation)</li>
+                        <li>openai-image-gen (OpenAI batch generation)</li>
+                        <li>openai-whisper (Local speech-to-text)</li>
+                        <li>gemini (Gemini CLI integration)</li>
+                    </ul>
+                </div>
+
+                <!-- Infrastructure & DevOps -->
+                <div class="category-card">
+                    <div class="category-icon">⚙️</div>
+                    <h3 class="category-title">Infrastructure & DevOps</h3>
+                    <p class="category-description">
+                        Agent configurations, skill creation, blueprints, and infrastructure management.
+                    </p>
+                    <ul class="skills-list">
+                        <li>openclaw-blueprints (AI agent configs)</li>
+                        <li>skill-creator (Create/update skills)</li>
+                        <li>weather (Weather forecasting)</li>
+                        <li>local-places (Location services)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Installation Section -->
+    <div class="container">
+        <div class="install-section">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 1rem;">&gt; SKILL_INSTALLATION.exe</div>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: white;">🚀 Install Any Skill in 30 Seconds</h2>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
+                All skills are OpenClaw-compatible and ready for immediate deployment:
+            </p>
+            
+            <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                openclaw skill install [skill-name]
+            </div>
+            
+            <p style="color: rgba(255, 255, 255, 0.7); margin: 1rem 0;">
+                Example: <code style="color: #FFD700;">openclaw skill install ez-google</code>
+            </p>
+            
+            <a href="https://github.com/openclaw/openclaw" target="_blank" class="cta-button">📚 OpenClaw Documentation</a>
+            <a href="https://souls.skworld.io" target="_blank" class="cta-button">🎭 Browse AI Personalities</a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation-card">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem;">&gt; SKWORLD_ECOSYSTEM.exe</div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: #FFD700;">🌟 Explore the SKWorld Ecosystem</h2>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
+                Skills are just one part of the revolutionary SKWorld AI ecosystem!
+            </p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://skworld.io" class="cta-button">🏠 SKWorld Hub</a>
+                <a href="https://souls.skworld.io" class="cta-button">🎭 35 AI Personalities</a>
+                <a href="https://smilintux.org/SKSecurity/" class="cta-button">🛡️ AI Security</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://skworld.io">🌟 SKWorld Hub</a>
+                <a href="https://souls.skworld.io">🎭 Soul Blueprints</a>
+                <a href="https://github.com/openclaw/openclaw">🔧 OpenClaw</a>
+                <a href="https://discord.gg/skworld">💬 Discord</a>
+            </div>
+            <div class="mono" style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
+                © 2026 Skills Marketplace - Part of <a href="https://skworld.io" style="color: #FFD700;">SKWorld</a> Revolutionary AI Ecosystem<br>
+                <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0 • 
+                <span style="color: rgba(255, 255, 255, 0.6);">Built with ❤️ by the Pengu Empire</span> 🐧✨
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(element) {
+            const text = element.textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                const originalBg = element.style.backgroundColor;
+                const originalBorder = element.style.borderColor;
+                element.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
+                element.style.borderColor = '#00ff00';
+                const originalText = element.textContent;
+                element.textContent = '✅ Copied to clipboard!';
+                setTimeout(() => {
+                    element.style.backgroundColor = originalBg;
+                    element.style.borderColor = originalBorder;
+                    element.textContent = originalText;
+                }, 1500);
+            });
+        }
+
+        // Create skill-themed floating particles
+        function createSkillParticles() {
+            const skillIcons = ['🛠️', '⚡', '🎯', '🚀', '💫', '⭐', '✨', '🔧', '📦'];
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                const icon = skillIcons[Math.floor(Math.random() * skillIcons.length)];
+                particle.textContent = icon;
+                particle.style.position = 'absolute';
+                particle.style.fontSize = Math.random() * 1 + 0.6 + 'rem';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animation = `float ${Math.random() * 20 + 20}s infinite ease-in-out`;
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.opacity = Math.random() * 0.6 + 0.3;
+                particle.style.zIndex = '-1';
+                document.querySelector('.starfield').appendChild(particle);
+            }
+        }
+
+        // CSS for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { 
+                    transform: translateY(0px) rotate(0deg); 
+                    opacity: 0.3; 
+                }
+                25% { 
+                    transform: translateY(-30px) rotate(90deg); 
+                    opacity: 0.7; 
+                }
+                50% { 
+                    transform: translateY(-60px) rotate(180deg); 
+                    opacity: 1; 
+                }
+                75% { 
+                    transform: translateY(-30px) rotate(270deg); 
+                    opacity: 0.7; 
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize particles when page loads
+        document.addEventListener('DOMContentLoaded', createSkillParticles);
+
+        // Stats counter animation
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = stat.textContent;
+                if (target === '59') {
+                    animateValue(stat, 0, 59, 2000);
+                } else if (target.includes('s')) {
+                    const num = parseInt(target);
+                    animateValue(stat, 0, num, 1500, 's');
+                } else if (target.includes('%')) {
+                    const num = parseInt(target);
+                    animateValue(stat, 0, num, 2500, '%');
+                }
+            });
+        }
+        
+        function animateValue(element, start, end, duration, suffix = '') {
+            const startTime = performance.now();
+            
+            function updateValue(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = current + suffix;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateValue);
+                }
+            }
+            
+            requestAnimationFrame(updateValue);
+        }
+
+        // Trigger stats animation when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) {
+            observer.observe(statsBar);
+        }
+    </script>
+</body>
+</html>
