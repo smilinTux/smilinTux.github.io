@@ -1,0 +1,4 @@
+This file forces GitHub Actions cache invalidation.
+Timestamp: 2026-02-17T02:50:00Z
+Purpose: Clear any cached Hugo builds and force fresh deployment.
+Change: Added newline
