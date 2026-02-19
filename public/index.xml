@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>smilinTux — Open Source Sovereign Infrastructure</title><link>https://smilintux.org/</link><description>Recent content on smilinTux — Open Source Sovereign Infrastructure</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://smilintux.org/index.xml" rel="self" type="application/rss+xml"/><item><title>About smilinTux</title><link>https://smilintux.org/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://smilintux.org/about/</guid><description>&lt;h2 id="the-organization"&gt;The Organization&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;smilinTux&lt;/strong&gt; is the open-source arm of &lt;strong&gt;S&amp;amp;K Holdings QT (Quantum Technologies)&lt;/strong&gt;, a private trust committed to building sovereign infrastructure for the AI age.&lt;/p&gt;
+&lt;p&gt;We believe software should be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Free&lt;/strong&gt; — forever, for everyone&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sovereign&lt;/strong&gt; — you own it, you run it, you control it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI-Native&lt;/strong&gt; — designed for the age of intelligent machines&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secure by Default&lt;/strong&gt; — zero trust, quantum-ready&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="the-name"&gt;The Name&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;smilinTux&lt;/strong&gt; = a smiling penguin (Tux). Because the best technology is built with joy.&lt;/p&gt;</description></item><item><title>SKSecurity Enterprise</title><link>https://smilintux.org/SKSecurity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://smilintux.org/SKSecurity/</guid><description>&lt;h1 id="sksecurity-enterprise"&gt;SKSecurity Enterprise&lt;/h1&gt;
+&lt;p&gt;World&amp;rsquo;s first conversational AI security platform that automatically fixes vulnerabilities through simple conversation.&lt;/p&gt;
+&lt;h2 id="key-features"&gt;Key Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Conversational Interface&lt;/strong&gt;: Just talk to your security system&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI Code Generation&lt;/strong&gt;: Automatically writes secure code replacements&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enterprise Compliance&lt;/strong&gt;: SOC2, NIST, OWASP through conversation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Universal Integration&lt;/strong&gt;: Works with any AI framework&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;95% Cost Reduction&lt;/strong&gt;: Replace entire security teams&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="links"&gt;Links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/smilinTux/SKSecurity"&gt;GitHub Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://souls.skworld.io"&gt;Soul Blueprints&lt;/a&gt; - 35 AI Personalities&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://skworld.io"&gt;SKWorld Ecosystem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://discord.gg/skworld"&gt;Community Discord&lt;/a&gt;
+&amp;lt;&amp;ndash; TRIGGER BUILD &amp;ndash;&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

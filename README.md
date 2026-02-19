@@ -1,1 +1,13 @@
-# Force rebuild Tue Feb 17 02:18:03 AM EST 2026
+# smilinTux.github.io
+
+> Organization website for [smilintux.org](https://smilintux.org)
+
+Built with Hugo using a custom `smilintux` theme. Deployed via GitHub Actions to GitHub Pages.
+
+## Local Development
+
+```bash
+hugo server -D
+```
+
+🐧 **staycuriousANDkeepsmilin**
