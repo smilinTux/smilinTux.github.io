@@ -33,7 +33,7 @@ We're making self-hosting and decentralized systems cool again. Every project we
 ```
 S&K Holdings QT (Quantum Technologies) — Parent Trust
   └── smilinTux — Open Source Organization
-       ├── Forgeprint — AI-Native Software Blueprints
+       ├── SKForge — AI-Native Software Blueprints
        ├── SKMemory — Universal AI Memory System
        └── SKyForge — Sovereign Alignment Calendar
 ```
@@ -47,7 +47,7 @@ We use **AGPL-3.0** for our tooling to protect against legal predators — compa
 - ✅ The software stays free forever — no one can capture it
 - ✅ Protects the community from corporate exploitation
 
-For **blueprints and generated code** (Forgeprint), we use **Apache 2.0** — because the code YOU generate from our blueprints is YOURS, no strings attached.
+For **blueprints and generated code** (SKForge), we use **Apache 2.0** — because the code YOU generate from our blueprints is YOURS, no strings attached.
 
 ---
 
