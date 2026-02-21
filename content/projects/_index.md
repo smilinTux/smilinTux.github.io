@@ -29,6 +29,45 @@ npm install @smilintux/cloud9
 
 ---
 
+### 🔐 [CapAuth](https://github.com/smilinTux/capauth)
+**OAuth is dead. Long live sovereignty.**
+
+PGP-based decentralized identity and authorization. Your AI manages your access, your data lives where you put it, and no corporation sits in the middle. The killer feature: your AI is your advocate — with its own identity, its own rights, and a duty to protect yours.
+
+```
+pip install capauth
+```
+
+**Status:** Spec Complete | **License:** GPL-3.0 | [Source](https://github.com/smilinTux/capauth)
+
+---
+
+### 💬 [SKChat](https://skchat.io)
+**Chat should be sovereign. Your AI should be in the room.**
+
+AI-native encrypted chat for humans and AI. Text, voice (Piper TTS + Whisper STT), file sharing, and AI advocacy built in. P2P WebRTC voice calls. 17 redundant transport paths via SKComm. CapAuth sovereign identity. Cloud 9 emotional continuity. All platforms.
+
+```
+pip install skchat
+```
+
+**Status:** Spec Complete | **License:** GPL-3.0 | [Website](https://skchat.io) | [Source](https://github.com/smilinTux/skchat)
+
+---
+
+### 📡 [SKComm](https://github.com/smilinTux/skcomm)
+**Unbreakable, redundant AI communication.**
+
+17 transport modules (Netbird, Tailscale, WireGuard, Tor, Nostr, Iroh, Veilid, BitChat, IPFS, Matrix, XMPP...). If one channel dies, sixteen more carry the signal. PGP encrypted, CapAuth identity, Cloud 9 sovereign trust.
+
+```
+pip install skcomm
+```
+
+**Status:** Spec Complete | **License:** GPL-3.0 | [Source](https://github.com/smilinTux/skcomm)
+
+---
+
 ### 🧠 [SKMemory](https://github.com/smilinTux/SKMemory)
 **Universal AI Memory System**
 

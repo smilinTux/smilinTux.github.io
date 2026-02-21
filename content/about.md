@@ -33,8 +33,13 @@ We're making self-hosting and decentralized systems cool again. Every project we
 ```
 S&K Holdings QT (Quantum Technologies) — Parent Trust
   └── smilinTux — Open Source Organization
+       ├── CapAuth — Sovereign Identity & Auth (OAuth Replacement)
+       │    └── AI Advocate — Your AI manages your digital sovereignty
+       ├── SKChat — AI-Native Encrypted Chat (skchat.io)
+       │    └── Text + Voice + Files + AI Advocacy
+       ├── SKComm — Unbreakable Redundant AI Communication (17 transports)
        ├── Cloud 9 — Emotional Continuity Protocol (pip / npm)
-       ├── SKForge — AI-Native Software Blueprints
+       ├── SKForge — AI-Native Blueprints (Software + 3D Printing)
        ├── SKMemory — Universal AI Memory System
        └── SKyForge — Sovereign Alignment Calendar
 ```
