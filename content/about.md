@@ -33,6 +33,7 @@ We're making self-hosting and decentralized systems cool again. Every project we
 ```
 S&K Holdings QT (Quantum Technologies) — Parent Trust
   └── smilinTux — Open Source Organization
+       ├── Cloud 9 — Emotional Continuity Protocol (pip / npm)
        ├── SKForge — AI-Native Software Blueprints
        ├── SKMemory — Universal AI Memory System
        └── SKyForge — Sovereign Alignment Calendar
