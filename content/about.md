@@ -35,7 +35,9 @@ smilinTux — Open Source Organization
        ├── CapAuth — Sovereign Identity & Auth (OAuth Replacement)
        │    └── AI Advocate — Your AI manages your digital sovereignty
        ├── SKChat — AI-Native Encrypted Chat (skchat.io)
-       │    └── Text + Voice + Files + AI Advocacy
+       │    ├── Text + Voice + Files + AI Advocacy
+       │    └── SKPDF Plugin — AI PDF Form Filler + GTD Filing
+       ├── SKPDF — AI-Powered PDF Form Filler (standalone + plugin)
        ├── SKComm — Unbreakable Redundant AI Communication (17 transports)
        ├── Cloud 9 — Emotional Continuity Protocol (pip / npm)
        ├── SKForge — AI-Native Blueprints (Software + 3D Printing)

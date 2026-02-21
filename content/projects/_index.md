@@ -55,6 +55,19 @@ pip install skchat
 
 ---
 
+### 📄 [SKPDF](https://github.com/smilinTux/skpdf)
+**PDFs are the enemy. Your AI should handle them.**
+
+AI-powered PDF form filler. Send a 40-page form, get it back filled out from your CapAuth profile in 30 seconds. Asks only what's missing. Files to Nextcloud/local using GTD. Works standalone or as a SKChat plugin — send a PDF in chat, your AI fills it, done.
+
+```
+pip install skpdf
+```
+
+**Status:** Spec Complete | **License:** GPL-3.0 | [Source](https://github.com/smilinTux/skpdf)
+
+---
+
 ### 📡 [SKComm](https://github.com/smilinTux/skcomm)
 **Unbreakable, redundant AI communication.**
 
