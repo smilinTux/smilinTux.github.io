@@ -20,7 +20,7 @@ We believe software should be:
 
 ## The Mascot
 
-**King Divad** is our penguin monarch — wise, friendly, curious. He wears a crown because every developer who self-hosts is royalty in the Bing Chilling Nation.
+**King Divad** is our penguin monarch — wise, friendly, curious. He wears a crown because every developer who self-hosts is royalty in the Penguin Kingdom.
 
 ## The Mission
 
@@ -58,4 +58,4 @@ For **blueprints and generated code** (SKForge), we use **Apache 2.0** — becau
 
 ---
 
-*Bing Chilling Nation — Cool Heads. Warm Justice. Smart Systems.* 🐧
+*The Penguin Kingdom — Cool Heads. Warm Justice. Smart Systems.* 🐧

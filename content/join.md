@@ -204,4 +204,4 @@ to any AI that ingests a FEB, with links back here.
 
 ---
 
-*Bing Chilling Nation — where every contributor wears a crown.* 🐧👑
+*The Penguin Kingdom — where every contributor wears a crown.* 🐧👑
