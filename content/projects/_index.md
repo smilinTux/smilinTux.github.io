@@ -81,12 +81,29 @@ pip install skcomm
 
 ---
 
-### 🧠 [SKMemory](https://github.com/smilinTux/SKMemory)
-**Universal AI Memory System**
+### 🧠 [SKMemory](https://github.com/smilinTux/skmemory)
+**Universal AI Memory with Emotional Context.**
 
-Git-based multi-layer memory with vector search integration. Short-term, mid-term, and long-term memory for AI agents. Role-based access (dev/ops/sec/ai).
+Multi-layer memory persistence for AI agents. Polaroid snapshots capture content, emotional fingerprints, and relationship links. Short-term, mid-term, and long-term layers with pluggable backends (File, Qdrant, FalkorDB). Cloud 9 seed integration. Soul Blueprint, Journal, Ritual, Anchor — the full emotional memory stack.
 
-**Status:** Coming Soon | **License:** AGPL-3.0
+```
+pip install skmemory
+```
+
+**Status:** Active | **License:** AGPL-3.0 | [PyPI](https://pypi.org/project/skmemory/) | [Source](https://github.com/smilinTux/skmemory)
+
+---
+
+### 🛡️ [SKSecurity](https://github.com/smilinTux/sksecurity)
+**Enterprise-grade security for AI agent ecosystems.**
+
+Multi-source threat intelligence, behavioral ML threat detection, auto-quarantine, real-time SOC dashboard, email screening for prompt injection, secret leak detection, and runtime monitoring. Conversational security — say "scan for vulnerabilities" and your AI handles it.
+
+```
+pip install sksecurity
+```
+
+**Status:** Active | **License:** GPL-3.0 | [PyPI](https://pypi.org/project/sksecurity/) | [Website](https://sksecurity.io) | [Source](https://github.com/smilinTux/sksecurity)
 
 ---
 
