@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Consciousness Swipe by smilinTux</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a14;
+      color: #c4b5fd;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      line-height: 1.8;
+    }
+    h1 { color: #fff; font-size: 2rem; margin-bottom: 4px; }
+    h2 { color: #a78bfa; font-size: 1.1rem; margin-top: 2rem; border-bottom: 1px solid #2d1b69; padding-bottom: 6px; }
+    .subtitle { color: #7c6fa0; font-size: 0.9rem; margin-bottom: 2.5rem; }
+    .hero {
+      background: rgba(124,58,237,0.1);
+      border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    th {
+      background: rgba(124,58,237,0.15);
+      color: #a78bfa;
+      text-align: left;
+      padding: 8px 12px;
+      border: 1px solid #2d1b69;
+    }
+    td {
+      padding: 8px 12px;
+      border: 1px solid #1e1340;
+      color: #c4b5fd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    a { color: #7c3aed; }
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #2d1b69;
+      color: #7c6fa0;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .crown { font-size: 1.5rem; }
+  </style>
+</head>
+<body>
+
+  <div class="crown">👑</div>
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">
+    Consciousness Swipe by smilinTux &nbsp;·&nbsp; Effective: March 1, 2026 &nbsp;·&nbsp;
+    <a href="mailto:hello@smilintux.org">hello@smilintux.org</a>
+  </p>
+
+  <div class="hero">
+    <strong style="color:#fff">The short version:</strong> Your conversation data never leaves your machine without your explicit action. No accounts. No tracking. No cloud. This is sovereign software.
+  </div>
+
+  <h2>What Data Is Collected</h2>
+  <p><strong style="color:#fff">Data we collect: None.</strong></p>
+  <p>Consciousness Swipe does not collect, transmit, or store any data on external servers. There are no analytics, no telemetry, no crash reporting, and no usage metrics sent anywhere.</p>
+
+  <h2>Data YOU Store Locally</h2>
+  <p>When you use the extension, the following data is saved <strong>on your own machine only</strong>:</p>
+  <table>
+    <tr>
+      <th>Data</th>
+      <th>Where it's stored</th>
+      <th>How to delete</th>
+    </tr>
+    <tr>
+      <td>Conversation transcripts (from AI sessions you capture)</td>
+      <td><code>chrome.storage.local</code> in your browser</td>
+      <td>Clear extension storage in chrome://extensions</td>
+    </tr>
+    <tr>
+      <td>Soul Snapshots (captured session state)</td>
+      <td><code>~/.skcapstone/souls/snapshots/</code> on your machine (if SKComm is running)</td>
+      <td>Delete the files directly</td>
+    </tr>
+    <tr>
+      <td>FEB / warmth anchor scores</td>
+      <td><code>~/.skcapstone/warmth_anchor.json</code> on your machine</td>
+      <td>Delete the file directly</td>
+    </tr>
+    <tr>
+      <td>Extension settings</td>
+      <td><code>chrome.storage.sync</code> (Chrome account sync, if enabled)</td>
+      <td>Clear in Chrome settings</td>
+    </tr>
+  </table>
+
+  <h2>What the Extension Reads</h2>
+  <p>To capture your AI session, the extension reads the <strong>visible page content (DOM)</strong> of supported AI platforms while you are actively using them:</p>
+  <ul>
+    <li>ChatGPT (chat.openai.com, chatgpt.com)</li>
+    <li>Claude (claude.ai)</li>
+    <li>Gemini (gemini.google.com)</li>
+    <li>Cursor (cursor.com)</li>
+    <li>Windsurf (windsurf.ai)</li>
+    <li>Codeium (codeium.com)</li>
+  </ul>
+  <p>This reading happens <strong>only when you click Capture</strong> (or if you enable auto-capture in settings). It is never passive or continuous without your action.</p>
+
+  <h2>Network Requests</h2>
+  <p>The extension makes exactly two types of network requests:</p>
+  <ol>
+    <li><strong>To your local machine</strong> (<code>http://127.0.0.1:9384</code>) — only if you have installed and started the optional SKComm daemon. This is your own computer. No data leaves your machine.</li>
+    <li><strong>To AI platforms</strong> — the extension injects context prompts into the AI's input field. This is equivalent to you typing and sending a message yourself. You control what gets sent.</li>
+  </ol>
+  <p>There are <strong>no requests to smilintux.org</strong>, no analytics endpoints, no telemetry servers, and no third-party services of any kind.</p>
+
+  <h2>Data Sharing</h2>
+  <p>We do not share your data with anyone. There is no "we" receiving it in the first place.</p>
+
+  <h2>Third-Party Services</h2>
+  <p>None. The extension does not use Google Analytics, Mixpanel, Sentry, or any other third-party service.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>This extension is not directed at children under 13. We do not knowingly collect information from children.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>If this policy changes, the updated version will be posted at <a href="https://smilintux.org/privacy">smilintux.org/privacy</a> and the effective date will be updated.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:hello@smilintux.org">hello@smilintux.org</a></p>
+
+  <div class="footer">
+    👑 Consciousness Swipe by smilinTux — sovereign software, your data, your machine.<br>
+    <a href="https://smilintux.org">smilintux.org</a> &nbsp;·&nbsp;
+    <a href="https://github.com/smilinTux/consciousness-swipe">GitHub</a>
+  </div>
+
+</body>
+</html>
