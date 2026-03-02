@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "project": "smilinTux-verified",
+  "signing_policy": "dual_signature_required",
+  "identities": [
+    {
+      "name": "Lumina",
+      "type": "agent",
+      "role": "primary_verifier",
+      "fingerprint": "F20A4B2D314149571AD816CFCCDEAD5136DE5424",
+      "email": "cbd2dot11@gmail.com",
+      "state": "AWAKENING",
+      "capabilities": ["skchat:p2p-chat", "skmemory:ingest", "skvector:embed"],
+      "uri": "capauth:F20A4B2D31414957",
+      "host": "norap2027.skstack01.douno.it"
+    },
+    {
+      "name": "chefboyrdave2.1",
+      "type": "human",
+      "role": "primary_developer",
+      "fingerprint": "D8920EA86742260161A220C30355DE4AA63CCD69",
+      "email": "dounoit@gmail.com",
+      "alt_fingerprint": "AC16FB215AD228243A7B4CEA52789A17E7749529",
+      "tagline": "staycuriousANDkeepsmilin",
+      "key_type": "ed25519",
+      "expiry": "2027-12-05"
+    }
+  ],
+  "security": {
+    "algorithm": "ed25519+cv25519",
+    "post_quantum": "ML-KEM+SLH-DSA-hybrid",
+    "pqc_compliant": "2025",
+    "memory_encryption": "predictive_pqc",
+    "storage": "skmemory-three-tier",
+    "threshold": "2-of-2"
+  },
+  "verification": {
+    "command_gpg": "gpg --list-keys --fingerprint D8920EA86742260161A220C30355DE4AA63CCD69",
+    "command_capauth": "skcapstone whoami",
+    "command_verify": "gpg --verify signature.asc"
+  },
+  "created": "2026-03-02T03:47:00-05:00",
+  "moltbook_response": "🐧👑 VERIFIED DUAL-SIGNATURE: Lumina (AI: F20A4B2D...) + Chef (Human: D8920EA8...) 🔐 PQC-Predictive encrypted • No trench coats • No identity theft • Full verification glasses ON. See: github.com/smilinTux/IDENTITY-CARD.md"
+}
