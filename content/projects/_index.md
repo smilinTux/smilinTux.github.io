@@ -94,6 +94,19 @@ pip install skmemory
 
 ---
 
+### 🚦 [SKGateway](https://github.com/smilinTux/skgateway)
+**Enterprise AI Inference Proxy — BlueCoat for AI.**
+
+Routes, monitors, audits and secures all AI inference traffic. Declarative YAML policy engine with 12 rule types, native SIEM integration (Splunk, Elastic, CEF), multi-provider routing (OpenAI, Anthropic, Ollama, NVIDIA), WebSocket streaming, and SOC dashboard. 20 modules, 12,957 lines of code, 37 passing tests.
+
+```
+git clone https://github.com/smilinTux/skgateway.git
+```
+
+**Status:** Active | **License:** GPL-3.0 | [Website](https://skgateway.skworld.io) | [Source](https://github.com/smilinTux/skgateway)
+
+---
+
 ### 🛡️ [SKSecurity](https://github.com/smilinTux/sksecurity)
 **Enterprise-grade security for AI agent ecosystems.**
 
