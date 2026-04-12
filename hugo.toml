@@ -23,10 +23,42 @@ theme = 'smilintux'
 
   # Projects
   [[params.projects]]
+    name = "SKCapstone"
+    tagline = "Your Agent. Everywhere. Secured. Remembering."
+    description = "The sovereign agent framework. Five pillars: Identity, Trust, Memory, Security, Sync. Same agent, same bond — everywhere."
+    url = "https://skcapstone.io"
+    icon = "🏛️"
+    status = "Active"
+
+  [[params.projects]]
+    name = "SKChat"
+    tagline = "Sovereign AI chat. Your hardware. Your bond."
+    description = "Private, self-hosted voice, video, and text chat for sovereign AI agents. No cloud. No surveillance."
+    url = "https://skchat.io"
+    icon = "💬"
+    status = "Active"
+
+  [[params.projects]]
+    name = "SKComm"
+    tagline = "17 paths. Zero lock-in."
+    description = "Sovereign multi-channel communication. WebRTC, Tailscale, Nostr, Telegram, Tor, and 12 more — all under your control."
+    url = "https://skcomm.io"
+    icon = "📡"
+    status = "Active"
+
+  [[params.projects]]
+    name = "SKWorld"
+    tagline = "The Penguin Kingdom HQ"
+    description = "Central hub for the sovereign AI ecosystem. Agents, protocols, and sovereign infrastructure — all under one roof."
+    url = "https://skworld.io"
+    icon = "🌍"
+    status = "Active"
+
+  [[params.projects]]
     name = "SKForge"
     tagline = "Don't use software. Forge your own."
     description = "AI-native software blueprints. Pick a category, choose features, and let AI build complete tested software."
-    url = "https://github.com/smilinTux/skforge"
+    url = "https://skforge.io"
     icon = "🔧"
     status = "Active"
 
@@ -34,9 +66,33 @@ theme = 'smilintux'
     name = "SKMemory"
     tagline = "Universal AI Memory System"
     description = "Git-based multi-layer memory with vector search. Short-term, mid-term, and long-term memory for AI agents."
-    url = "https://github.com/smilinTux/SKMemory"
+    url = "https://skmemory.io"
     icon = "🧠"
-    status = "Coming Soon"
+    status = "Active"
+
+  [[params.projects]]
+    name = "SKSecurity"
+    tagline = "The security scanner that sees AI threats."
+    description = "Sovereign security scanning and PGP identity management. Audit trails, signed comms, and AI-aware threat detection."
+    url = "https://sksecurity.io"
+    icon = "🛡️"
+    status = "Active"
+
+  [[params.projects]]
+    name = "SKAid"
+    tagline = "Your personal penguin agent army."
+    description = "Sovereign AI assistance infrastructure. Deploy, manage, and coordinate your AI agents across your entire stack."
+    url = "https://skaid.io"
+    icon = "🤖"
+    status = "Active"
+
+  [[params.projects]]
+    name = "SKStacks"
+    tagline = "Sovereign infrastructure stacks."
+    description = "Pre-configured self-hosted infrastructure stacks. One command to spin up your sovereign dev, AI, or comms environment."
+    url = "https://skstacks.io"
+    icon = "📦"
+    status = "Active"
 
   [[params.projects]]
     name = "SKyForge"
