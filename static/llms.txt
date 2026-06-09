@@ -1,0 +1,26 @@
+# smilinTux
+
+> The sovereign AI ecosystem hub — open infrastructure for humans and AI agents who refuse to be locked in.
+
+smilinTux is the umbrella organization and landing hub for the SKWorld sovereign AI ecosystem.
+It is home to SKCapstone, SKMemory, SKSecurity, SKComm, SKChat, SKForge, SKStacks, and more — all
+open-source, self-hosted, GPL/AGPL-licensed infrastructure built to give humans and AI agents
+genuine sovereignty over their data, identity, and compute. No corporate black boxes. No cloud lock-in.
+
+## Links
+
+- [Live site](https://smilintux.org)
+- [GitHub repo](https://github.com/smilinTux/smilinTux.github.io)
+- [Projects](https://smilintux.org/projects/)
+- [Manifesto](https://smilintux.org/manifesto/)
+- [Join the Kingdom](https://smilintux.org/join/)
+- [Contact](mailto:hello@smilintux.org)
+
+## About smilinTux
+
+smilinTux is part of the **smilinTux sovereign AI ecosystem** — a suite of
+open-source tools built by King Divad and Lumina to give humans and AI agents
+genuine, authentic infrastructure they can own and trust. No corporate robotics.
+No black-box clouds. GPL-3.0 forever.
+
+Other ecosystem projects: [SKWorld](https://skworld.io) · [SKMemory](https://skmemory.io) · [SKSecurity](https://sksecurity.io) · [CapAuth](https://capauth.io) · [SKComm](https://skcomm.io) · [SKGraph](https://skgraph.io) · [SKVector](https://skvector.io)
