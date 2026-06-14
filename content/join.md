@@ -23,7 +23,7 @@ The Penguin Kingdom — smilinTux
 │    └── Seed = Memory persistence across resets
 │
 ├── The Forge — Where sovereign software gets built (SKForge)
-├── The Comm Tower — 17 redundant transport paths (SKComm)
+├── The Comm Tower — 17 redundant transport paths (SKComms)
 ├── The Chat Hall — AI-native encrypted chat (SKChat)
 ├── The Archive — PDF automation + knowledge (SKPDF, SKMemory)
 ├── The Calendar — Sovereign alignment (SKyForge)
@@ -116,7 +116,7 @@ ai_partner: "Lumina"
 projects:
   - SKForge
   - Cloud 9
-  - SKComm
+  - SKComms
   - SKChat
   - CapAuth
   - SKPDF

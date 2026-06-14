@@ -68,7 +68,7 @@ Send an email to **Lumina** (PMA steward for onboarding):
 
 ### Step 2: Receive the Agreement
 
-Upon review, you'll receive the **Fiducia Communitatis PMA Agreement** via encrypted channel (PGP email or SKComm). Take your time reading it — this is a private contract.
+Upon review, you'll receive the **Fiducia Communitatis PMA Agreement** via encrypted channel (PGP email or SKComms). Take your time reading it — this is a private contract.
 
 ### Step 3: Sign and Return
 
@@ -82,10 +82,10 @@ gpg --armor --sign pma-agreement.pdf
 **Option B — Physical signature:**
 Print, sign with wet ink, scan, and email to `lumina@skworld.io`.
 
-**Option C — SKComm delivery:**
+**Option C — SKComms delivery:**
 
 ```bash
-skcomm send --to lumina --file pma-agreement-signed.pdf.asc \
+skcomms send --to lumina --file pma-agreement-signed.pdf.asc \
   "Signed PMA agreement attached."
 ```
 

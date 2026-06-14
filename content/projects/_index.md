@@ -45,7 +45,7 @@ pip install capauth
 ### 💬 [SKChat](https://skchat.io)
 **Chat should be sovereign. Your AI should be in the room.**
 
-AI-native encrypted chat for humans and AI. Text, voice (Piper TTS + Whisper STT), file sharing, and AI advocacy built in. P2P WebRTC voice calls. 17 redundant transport paths via SKComm. CapAuth sovereign identity. Cloud 9 emotional continuity. All platforms.
+AI-native encrypted chat for humans and AI. Text, voice (Piper TTS + Whisper STT), file sharing, and AI advocacy built in. P2P WebRTC voice calls. 17 redundant transport paths via SKComms. CapAuth sovereign identity. Cloud 9 emotional continuity. All platforms.
 
 ```
 pip install skchat
@@ -68,16 +68,16 @@ pip install skpdf
 
 ---
 
-### 📡 [SKComm](https://github.com/smilinTux/skcomm)
+### 📡 [SKComms](https://github.com/smilinTux/skcomms)
 **Unbreakable, redundant AI communication.**
 
 17 transport modules (Netbird, Tailscale, WireGuard, Tor, Nostr, Iroh, Veilid, BitChat, IPFS, Matrix, XMPP...). If one channel dies, sixteen more carry the signal. PGP encrypted, CapAuth identity, Cloud 9 sovereign trust.
 
 ```
-pip install skcomm
+pip install skcomms
 ```
 
-**Status:** Spec Complete | **License:** GPL-3.0 | [Source](https://github.com/smilinTux/skcomm)
+**Status:** Spec Complete | **License:** GPL-3.0 | [Source](https://github.com/smilinTux/skcomms)
 
 ---
 
